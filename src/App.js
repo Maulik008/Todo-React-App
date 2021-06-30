@@ -1,11 +1,15 @@
+//import logo from './logo.svg';
 import React from 'react';
-import './style.css';
 
-const App = () => {
+import './App.css';
+import Input from "./container/Registration";
 
+function App() {
   return (
-    <h1>Maulik</h1>
-  )
+    <div>
+      <Input />
+    </div>
+  );
 }
 
 export default App;
