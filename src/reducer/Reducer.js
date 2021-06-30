@@ -1,5 +1,6 @@
 const iState = {
     name: "mihir",
+    lastName: 'abc',
     wishes: ['eat', 'code']
 }
 
