@@ -1,0 +1,66 @@
+import { connect } from 'react-redux'
+import {
+    Button,
+    Form,
+    FormGroup,
+    Input,
+    Label
+} from 'reactstrap';
+import './css/form.css';
+
+const LoginForm = (props) => {
+
+
+    return (
+        <div className="App">
+            <h2>Login Your Account</h2>
+            <Form className="form" onSubmit={(e) => {
+                e.preventDefault()
+                const logemail = e.target.logemail.value
+                const logpassword = e.target.logpassword.value
+
+                let checkEmail = props.auth.find(o => o.email === logemail);
+                let checkPassword = props.auth.find(o => o.password === logpassword);
+
+                if (checkEmail && checkPassword) {
+                    console.log("success")
+                    props.history.push("/home")
+                }
+                else {
+                    return (console.log("false"))
+                }
+
+            }} >
+                <FormGroup>
+                    <Label for="exampleEmail">Email</Label>
+                    <Input
+                        type="logemail"
+                        name="logemail"
+                        id="Logemail"
+                        placeholder="example@example.com"
+                    />
+                </FormGroup>
+                <FormGroup>
+                    <Label for="examplePassword">Password</Label>
+                    <Input
+                        type="logpassword"
+                        name="logpassword"
+                        id="Logpassword"
+                        placeholder="********"
+                    />
+                </FormGroup><br />
+                <Button>Submit</Button>
+            </Form>
+        </div>
+    );
+};
+
+
+const StatetoProps = (state) => ({
+    auth: state.Auth.authData,
+})
+
+export default connect(StatetoProps)(LoginForm)
+
+
+
