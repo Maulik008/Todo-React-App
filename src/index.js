@@ -1,21 +1,21 @@
-import React from 'react';
+import React, { Component } from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
+import { Provider } from 'react-redux'
+import store from './store'
+import 'bootstrap/dist/css/bootstrap.min.css';
+import { BrowserRouter, Route, Switch } from 'react-router-dom';
 
-import { createStore } from 'redux';
-import { Provider } from 'react-redux';
-import reducer from './reducer/Reducer';
+ReactDOM.render(
 
-const store = createStore(reducer);
-
-
-window.store = store;
-
-
-ReactDOM.render(<Provider store={store}><React.StrictMode>
-  <App />
-</React.StrictMode></Provider>,
+  <React.StrictMode>
+    <Provider store={store}>
+      <BrowserRouter>
+        <App />
+      </BrowserRouter>
+    </Provider>
+  </React.StrictMode>,
   document.getElementById('root')
 );
 
