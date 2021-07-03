@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { connect } from 'react-redux'
 import { addTodo } from '../actions'
 import List from './list'
@@ -14,6 +14,15 @@ import {
 } from "reactstrap";
 
 const AddTodo = (props) => {
+
+    useEffect(() => {
+        if (props.auth[0]) {
+            return true
+        }
+        else {
+            props.history.push("/Error")
+        }
+    });
 
     const [emp, setemp] = useState("");
     return (
@@ -62,10 +71,19 @@ const AddTodo = (props) => {
             <Card>
                 <Section />
             </Card>
+            <Card>
+                <CardBody>
+                    <button className="button button3" onClick={() => { props.history.push("/") }} >LogOut</button>
+                </CardBody>
+            </Card>
+
         </div>
     )
 
 
 }
 
-export default connect()(AddTodo);
+const StatetoProps = (state) => ({
+    auth: state.Auth.authData,
+})
+export default connect(StatetoProps)(AddTodo);

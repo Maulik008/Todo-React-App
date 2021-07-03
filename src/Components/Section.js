@@ -30,8 +30,8 @@ const Section = (props) => {
                             {props.todos
                                 .filter(item => item.progress === true)
                                 .map(item => <li key={item.id}>{item.message}
-                                    <button class="button button2" onClick={() => { props.dispatch(deleteTodo(item.id)) }}>Delete</button>
-                                    <button class="button button2" onClick={() => {
+                                    <button className="button button2" onClick={() => { props.dispatch(deleteTodo(item.id)) }}>Delete</button>
+                                    <button className="button button2" onClick={() => {
                                         props.dispatch(doneTodo(item.id))
                                     }}>Done</button></li>)}
                         </ul>

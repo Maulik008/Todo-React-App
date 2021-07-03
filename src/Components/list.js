@@ -1,10 +1,10 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { connect } from 'react-redux'
 import { deleteTodo, doneTodo, testedTodo, progressTodo } from '../actions'
 import '../style.css';
 
 const List = (props) => {
-    const [empt, setempt] = useState('')
+
     return (
         <div>
             <ul>
@@ -13,17 +13,17 @@ const List = (props) => {
                     .map((todo, index) => (
                         <li key={index}> {todo.message}
 
-                            <button class="button button2" onClick={() => { props.dispatch(deleteTodo(todo.id)) }}>Delete</button>
+                            <button className="button button2" onClick={() => { props.dispatch(deleteTodo(todo.id)) }}>Delete</button>
 
-                            <button class="button button2" onClick={() => {
+                            <button className="button button2" onClick={() => {
                                 props.dispatch(doneTodo(todo.id))
                             }}>Done</button>
 
-                            <button class="button button2" onClick={() => {
+                            <button className="button button2" onClick={() => {
                                 props.dispatch(testedTodo(todo.id))
                             }}>Tested</button>
 
-                            <button class="button button2" onClick={() => {
+                            <button className="button button2" onClick={() => {
                                 props.dispatch(progressTodo(todo.id))
                             }}>Progress</button>
                         </li>
