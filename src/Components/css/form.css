@@ -20,7 +20,16 @@ label {
 
 .input-group {
   margin-left: 8%;
-  padding-top: 2%;
+  padding-top: 1%;
+}
+.emp {
+  margin-left: 8%;
+  color: red;
+  font-family: Impact, "Arial Narrow Bold", sans-serif;
+}
+.regb {
+  color: red;
+  font-family: Impact, sans-serif;
 }
 .hh {
   margin-left: 8%;
@@ -44,5 +53,11 @@ label {
 }
 
 .loginb {
-  margin: 3px;
+  margin-left: 1%;
+  margin-top: 2%;
+}
+
+.img {
+  height: 26%;
+  width: 26%;
 }

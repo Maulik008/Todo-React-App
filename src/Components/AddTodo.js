@@ -1,11 +1,16 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { connect } from 'react-redux'
 import { addTodo } from '../actions'
 import './css/form.css';
 
 const AddTodo = (props) => {
-    const [emp, setemp] = useState("");
+    // useEffect(() => {
+    //     if (props.auth[0]) {
+    //         return true
+    //     } else { props.history.push("/Error") };
+    // });
 
+    const [emp, setemp] = useState("");
 
     return (<>
         <form onSubmit={(e) => {
@@ -24,15 +29,15 @@ const AddTodo = (props) => {
         }}>
 
             <h1 className='hh'>Create a To do list</h1>
-            <p>{emp}</p>
+            <p className='emp'>{emp}</p>
             <div className='input-group'>
                 <input type="text" name="username" />
+
                 <button className='s-button'>Submit</button>
             </div>
 
 
         </form>
-        {/* <div> <List /></div> */}
     </>
     )
 }

@@ -40,19 +40,20 @@ const LoginForm = (props) => {
                         name="logemail"
                         id="Logemail"
                         placeholder="example@example.com"
+                        autoComplete="nope"
                     />
                 </FormGroup>
                 <FormGroup>
                     <Label for="examplePassword">Password</Label>
                     <Input
-                        type="logpassword"
+                        type="password"
                         name="logpassword"
                         id="Logpassword"
                         placeholder="********"
                     />
                 </FormGroup><br />
-                <p>{mb}</p>
-                <Button>Submit</Button>
+                <p className='regb'>{mb}</p>
+                <Button className='loginb'>Submit</Button>
                 <Button className='loginb' onClick={() => { props.history.push("/") }}>Registration</Button>
             </Form>
         </div>

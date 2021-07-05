@@ -45,6 +45,7 @@ const RegForm = (props) => {
                         name="username"
                         id="Username"
                         placeholder="username"
+                    // autocomplete="off"
                     />
                 </FormGroup>
                 <FormGroup>
@@ -54,6 +55,7 @@ const RegForm = (props) => {
                         name="email"
                         id="Email"
                         placeholder="example@example.com"
+                    //autocomplete="off"
                     />
                 </FormGroup>
                 <FormGroup>
@@ -72,10 +74,11 @@ const RegForm = (props) => {
                         name="number"
                         id="Number"
                         placeholder="nummber"
+                        autoComplete="nope"
                     />
                 </FormGroup>
                 <br />
-                <p>{value}</p>
+                <p className='regb'>{value}</p>
 
                 <Button> Submit</Button>
             </Form>
