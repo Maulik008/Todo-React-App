@@ -3,7 +3,6 @@ import { connect } from 'react-redux'
 import { addTodo } from '../actions'
 import List from './list'
 import Section from './Section'
-import Search from './Search'
 import './css/form.css';
 import {
     Button,
@@ -26,14 +25,12 @@ const AddTodo = (props) => {
 
     const [emp, setemp] = useState("");
     return (
-        <div >
-            <Card>
+        <div className="container my-3">
+            <Card className="text-center">
                 <CardBody>
+
                     <CardTitle className=" mb-3" tag="h3">
-                        My TODO
-                    </CardTitle>
-                    <CardTitle className=" mb-3" tag="h3">
-                        <Search />
+
                     </CardTitle>
                     <CardText className=" mb-4">
                         <form onSubmit={(e) => {
@@ -51,10 +48,12 @@ const AddTodo = (props) => {
                             }
 
                         }}>
-                            <p>{emp}</p>
+                            <p className="text-danger">{emp}</p>
                             <input type="text" placeholder="Add Todo" name="username" />
-                            <Button color="primary"
+                            <Button className="mx-2 bg-danger"
                             >Add Todo</Button>
+
+
                         </form>
                     </CardText>
 
@@ -63,17 +62,14 @@ const AddTodo = (props) => {
 
             </Card>
 
-            <Card>
-                <h2>Your  Todo</h2>
+            <Card className="my-3 bg-light">
                 <List />
             </Card>
 
-            <Card>
-                <Section />
-            </Card>
-            <Card>
-                <CardBody>
-                    <button className="button button3" onClick={() => { props.history.push("/") }} >LogOut</button>
+            <Section />
+            <Card className="my-1 bg-light">
+                <CardBody >
+                    <button className=" button button3" onClick={() => { props.history.push("/") }} >LogOut</button>
                 </CardBody>
             </Card>
 

@@ -5,6 +5,8 @@ import AddTodo from './Components/Addtodo'
 import RegForm from './Components/RegForm'
 import LoginForm from './Components/LoginForm'
 import Error from './Components/Error'
+import Todonavbar from './Components/Navbar'
+
 
 
 const App = () => {
@@ -12,12 +14,17 @@ const App = () => {
 
   return (
     <div>
-      <Router>
-        <Route exact path="/" component={RegForm} />
+      <Todonavbar search={false} />
 
-        <Route path="/log" component={LoginForm} />
-        <Route path="/Home" component={AddTodo} />
-        <Route path="/Error" component={Error} />
+      <Router>
+        <Switch>
+          <Route exact path="/" component={RegForm} />
+
+          <Route exact path="/log" component={LoginForm} />
+          <Route exact path="/Home" component={AddTodo} />
+          <Route path="/Error" component={Error} />
+          <Route component={Error} />
+        </Switch>
       </Router>
 
 

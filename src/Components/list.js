@@ -7,29 +7,33 @@ const List = (props) => {
 
     return (
         <div>
-            <ul>
-                {props.todos
-                    .filter(item => item.done === false && item.tested === false && item.progress === false)
-                    .map((todo, index) => (
-                        <li key={index}> {todo.message}
+            <h2 className="text-center font-weight-bold">Your Todo List</h2>
+            <section className="contact text-danger ">
 
-                            <button className="button button2" onClick={() => { props.dispatch(deleteTodo(todo.id)) }}>Delete</button>
+                <ul>
+                    {props.todos
+                        .filter(item => item.done === false && item.tested === false && item.progress === false)
+                        .map((todo, index) => (
+                            <li className="my-2" key={index}> {todo.message}
 
-                            <button className="button button2" onClick={() => {
-                                props.dispatch(doneTodo(todo.id))
-                            }}>Done</button>
+                                <button className="button button2" onClick={() => { props.dispatch(deleteTodo(todo.id)) }}>Delete</button>
 
-                            <button className="button button2" onClick={() => {
-                                props.dispatch(testedTodo(todo.id))
-                            }}>Tested</button>
+                                <button className="button button2" onClick={() => {
+                                    props.dispatch(doneTodo(todo.id))
+                                }}>Done</button>
 
-                            <button className="button button2" onClick={() => {
-                                props.dispatch(progressTodo(todo.id))
-                            }}>Progress</button>
-                        </li>
+                                <button className="button button2" onClick={() => {
+                                    props.dispatch(testedTodo(todo.id))
+                                }}>Tested</button>
 
-                    ))}
-            </ul>
+                                <button className="button button2" onClick={() => {
+                                    props.dispatch(progressTodo(todo.id))
+                                }}>Progress</button>
+                            </li>
+
+                        ))}
+                </ul>
+            </section>
 
         </div>
     )
