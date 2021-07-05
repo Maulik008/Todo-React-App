@@ -14,7 +14,7 @@ const App = () => {
 
   return (
     <div>
-      <Todonavbar search={false} />
+      <Todonavbar search={true} />
 
       <Router>
         <Switch>
