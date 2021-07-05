@@ -1,3 +1,4 @@
+import { useState } from 'react';
 import { connect } from 'react-redux'
 import {
     Button,
@@ -9,6 +10,7 @@ import {
 import './css/form.css';
 
 const LoginForm = (props) => {
+    const [mb, setMb] = useState('');
 
 
     return (
@@ -23,11 +25,11 @@ const LoginForm = (props) => {
                 let checkPassword = props.auth.find(o => o.password === logpassword);
 
                 if (checkEmail && checkPassword) {
-                    console.log("success")
+                    //console.log("success")
                     props.history.push("/home")
                 }
                 else {
-                    return (console.log("false"))
+                    setMb('Email & Password are Not Match.')
                 }
 
             }} >
@@ -49,7 +51,9 @@ const LoginForm = (props) => {
                         placeholder="********"
                     />
                 </FormGroup><br />
+                <p>{mb}</p>
                 <Button>Submit</Button>
+                <Button className='loginb' onClick={() => { props.history.push("/") }}>Registration</Button>
             </Form>
         </div>
     );

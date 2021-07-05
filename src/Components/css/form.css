@@ -19,14 +19,30 @@ label {
 }
 
 .input-group {
-  margin-left: 10%;
-  padding-top: 3%;
+  margin-left: 8%;
+  padding-top: 2%;
 }
 .hh {
-  margin-left: 4%;
+  margin-left: 8%;
 }
 
 .list {
-  margin-left: 4%;
+  margin-left: 7%;
   padding-top: 2%;
+}
+.button {
+  margin: 3px;
+}
+.button1 {
+  margin: 3px;
+}
+.button2 {
+  margin: 3px;
+}
+.button3 {
+  margin: 3px;
+}
+
+.loginb {
+  margin: 3px;
 }

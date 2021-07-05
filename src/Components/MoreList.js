@@ -1,42 +1,80 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import { connect } from 'react-redux'
+import { Link } from 'react-router-dom';
 import './css/form.css';
-//import { deleteTodo } from '../actions'
+import { deleteTodo, doneTodo } from '../actions'
+import { Card, CardBody, CardTitle, CardText, Button } from "reactstrap";
+
 
 const MoreList = (props) => {
-    console.log(props)
-    return (
-        <div>
-            <div>
-                <h1>Done </h1>
+    useEffect(() => {
+        console.log(props.todos);
+    }, [])
 
-            </div>
+    return (<>
 
-            <div>
-                <h1>Tested </h1>
-            </div>
+        <div className=" card-group" >
+            <Card>
+                <CardBody>
+                    <CardTitle>Done Tasks</CardTitle>
+                    <CardText>
+                        <ul>
 
-            <div>
-                <h1>Progress </h1>
-            </div>
+                            {props.todos
+                                .filter(item => item.done === true)
+                                .map(item => <li key={item.id}>{item.message}</li>
 
-            {/* <ul>
-                {props.todos.map((todo, index) => (
-                          {/* {todo.message} */}
-            {/* <button>Progress</button>
-                        <button>R</button>
-                        <button>Done</button> */}
-            {/* <button onClick={() => props.dispatch(deleteTodo(todo.id))}>
-onClick={() => props.dispatch(progressTodo(todo.id))}
-                            Delete</button> 
-                ))}
-            </ul> */}
+                                )}
+                        </ul>
+                    </CardText>
+                </CardBody>
+            </Card>
+            <Card>
+
+                <CardBody>
+                    <CardTitle>Progress Tasks</CardTitle>
+                    <CardText>
+                        <ul>
+                            {props.todos
+                                .filter(item => item.progress === true)
+                                .map(item => <li key={item.id}>{item.message}
+                                    <button class="button button2" onClick={() => { props.dispatch(deleteTodo(item.id)) }}>Delete</button>
+                                    <button class="button button2" onClick={() => {
+                                        props.dispatch(doneTodo(item.id))
+                                    }}>Done</button></li>)}
+                        </ul>
+                    </CardText>
+                </CardBody>
+            </Card>
+
+            <Card>
+                <CardBody>
+                    <CardTitle>Tested Tasks</CardTitle>
+                    <CardText>
+                        <ul>
+
+                            {props.todos
+                                .filter(item => item.tested === true)
+                                .map(item => <li key={item.id}>{item.message}</li>)}
+                        </ul>
+
+                    </CardText>
+                </CardBody>
+            </Card>
 
         </div>
+        <Link to="/">
+            <Button className='loginb'>Registration</Button>
+        </Link>
+        <Link to="/login">
+            <Button className='loginb'>Login</Button>
+        </Link>
+
+    </>
     )
 }
 
-const mapStatetoProps = (state) => ({
+const StatetoProps = (state) => ({
     todos: state.todos.data,
 })
-export default connect(mapStatetoProps)(MoreList)
+export default connect(StatetoProps)(MoreList)

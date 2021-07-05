@@ -13,7 +13,7 @@ const App = () => {
     <div>
       <Router>
         <Route exact path="/" component={RegForm} />
-        <Route exact path="/login" component={LoginForm} />
+        <Route path="/login" component={LoginForm} />
         <Route exact path="/home" component={Home} />
       </Router>
     </div>

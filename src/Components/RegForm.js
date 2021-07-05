@@ -9,8 +9,10 @@ import {
     Label
 } from 'reactstrap';
 import './css/form.css';
+import { useState } from 'react';
 
 const RegForm = (props) => {
+    const [value, setValue] = useState('');
 
     return (
         <div className="App" >
@@ -21,12 +23,19 @@ const RegForm = (props) => {
                 let email = e.target.email.value
                 let password = e.target.password.value
                 let number = e.target.number.value
-                props.dispatch(authTodo(username, email, password, number));
-                e.target.username.value = ""
-                e.target.email.value = ""
-                e.target.password.value = ""
-                e.target.number.value = ""
-                props.history.push('/login');
+
+                if (username === "" || email === "" || password === "" || number === "") {
+                    setValue("All fields are Required")
+                }
+                else {
+                    props.dispatch(authTodo(username, email, password, number));
+                    e.target.username.value = ""
+                    e.target.email.value = ""
+                    e.target.password.value = ""
+                    e.target.number.value = ""
+                    props.history.push('/login');
+                    setValue('')
+                }
 
             }} >
                 <FormGroup>
@@ -66,6 +75,8 @@ const RegForm = (props) => {
                     />
                 </FormGroup>
                 <br />
+                <p>{value}</p>
+
                 <Button> Submit</Button>
             </Form>
         </div>
