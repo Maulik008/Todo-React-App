@@ -92,6 +92,9 @@ const Section = (props) => {
 
                     </div>
                 </div>
+                <button className=" button button3" onClick={() => {
+                    props.todos.map(e => { props.dispatch(deleteTodo(e.id)) })
+                }} >All Reset</button>
             </section>
         </div >
 
