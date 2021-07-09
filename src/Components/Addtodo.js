@@ -62,9 +62,11 @@ const AddTodo = (props) => {
 
             </Card>
 
-            <Card className="my-3 bg-light">
+            <br />
+            <div className="text-align-center">
                 <List />
-            </Card>
+            </div>
+
 
             <Section />
             <Card className="my-1 bg-light">
