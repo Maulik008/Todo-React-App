@@ -1,0 +1,17 @@
+.add {
+  width: 45%;
+  margin-left: 10%;
+}
+.emp {
+  margin-left: 8%;
+  color: red;
+  font-family: "Arial Narrow Bold", sans-serif;
+}
+.hh {
+  margin-left: 8%;
+  margin-top: 3%;
+}
+.input-group {
+  margin-left: 8%;
+  padding-top: 1%;
+}

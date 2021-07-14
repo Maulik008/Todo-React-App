@@ -1,9 +1,9 @@
 import React from 'react';
 import { BrowserRouter as Router, Route } from 'react-router-dom';
 import './style.css';
-import RegForm from './Components/RegForm'
-import LoginForm from './Components/LoginForm'
-import Home from './Components/Home'
+import RegForm from './containers/registration/RegForm'
+import LoginForm from './containers/login/LoginForm'
+import Home from './containers/home/Home'
 
 
 const App = () => {

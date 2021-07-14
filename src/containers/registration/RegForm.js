@@ -1,15 +1,9 @@
 import { connect } from 'react-redux'
-import { authTodo } from '../actions'
-
-import {
-    Button,
-    Form,
-    FormGroup,
-    Input,
-    Label
-} from 'reactstrap';
-import './css/form.css';
+import { authTodo } from '../../actions'
 import { useState } from 'react';
+import { Button, Form, FormGroup, Input, Label } from 'reactstrap';
+import '../registration/Reg.css'
+
 
 const RegForm = (props) => {
     const [value, setValue] = useState('');

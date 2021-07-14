@@ -1,0 +1,25 @@
+.loginb {
+  margin-left: 1%;
+  margin-top: 2%;
+}
+.pro_button {
+  margin: 3px;
+  background-color: red;
+  color: aliceblue;
+  border: none;
+}
+.pro_button1 {
+  margin: 3px;
+  background-color: rgb(104, 224, 104);
+  color: aliceblue;
+  border: none;
+}
+.mt_text {
+  font-family: Verdana, Arial, Helvetica, sans-serif;
+}
+.mp_text {
+  font-family: Verdana, Arial, Helvetica, sans-serif;
+}
+.md_text {
+  font-family: Verdana, Arial, Helvetica, sans-serif;
+}

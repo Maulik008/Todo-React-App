@@ -7,7 +7,7 @@ import {
     Input,
     Label
 } from 'reactstrap';
-import './css/form.css';
+import '../login/Login.css'
 
 const LoginForm = (props) => {
     const [mb, setMb] = useState('');

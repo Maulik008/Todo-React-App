@@ -1,8 +1,11 @@
 import React from 'react';
-import AddTodo from './AddTodo';
-import List from './List';
-import MoreList from './MoreList';
-import Search from './Search';
+import AddTodo from '../home/AddTodo/AddTodo';
+import List from '../home/List/List';
+import MoreList from '../home/MoreList/MoreList';
+import Search from '../home/Search/Search';
+import '../home/Home.css'
+
+
 
 
 const Home = (props) => {

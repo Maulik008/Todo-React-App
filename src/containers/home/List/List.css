@@ -1,0 +1,34 @@
+.button {
+  margin: 3px;
+  background-color: violet;
+  color: aliceblue;
+  border: none;
+}
+.button1 {
+  margin: 3px;
+  background-color: teal;
+  color: aliceblue;
+  border: none;
+}
+.button2 {
+  margin: 3px;
+  background-color: rgb(104, 224, 104);
+  color: aliceblue;
+  border: none;
+}
+.button3 {
+  margin: 3px;
+  background-color: red;
+  color: aliceblue;
+  border: none;
+}
+.slist {
+  margin-top: 1%;
+  margin-left: 8%;
+  width: 30%;
+  margin-bottom: 2%;
+  border: hidden;
+}
+.l_text {
+  font-family: Verdana, Arial, Helvetica, sans-serif;
+}
