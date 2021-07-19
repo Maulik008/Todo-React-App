@@ -8,7 +8,7 @@ import '../registration/Reg.css'
 const RegForm = (props) => {
     const [value, setValue] = useState('');
 
-    return (
+    return (<>
         <div className="App" >
             <h2>Register In Todo App</h2>
             <Form className="form" onSubmit={(e) => {
@@ -77,6 +77,7 @@ const RegForm = (props) => {
                 <Button> Submit</Button>
             </Form>
         </div>
+    </>
     );
 
 }

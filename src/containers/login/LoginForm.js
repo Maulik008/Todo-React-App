@@ -13,7 +13,7 @@ const LoginForm = (props) => {
     const [mb, setMb] = useState('');
 
 
-    return (
+    return (<>
         <div className="App">
             <h2>Login Your Account</h2>
             <Form className="form" onSubmit={(e) => {
@@ -57,6 +57,7 @@ const LoginForm = (props) => {
                 <Button className='loginb' onClick={() => { props.history.push("/") }}>Registration</Button>
             </Form>
         </div>
+    </>
     );
 };
 

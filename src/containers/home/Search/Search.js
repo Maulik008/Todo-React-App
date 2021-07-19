@@ -10,14 +10,12 @@ const Serach = (props) => {
     const [kp, setkp] = useState('')
 
     return (
-        //className="hh"
-
-        <div >
-            <nav className="navbar navbar-expand-sm bg-primary navbar-dark ">
+        <>
+            <nav className="navbar navbar-expand-sm bg-warning navbar-dark ">
                 <div className="serch">
                     <form className="form-inline d-flex dropdown" action="/action_page.php">
 
-                        <h2>Search Todo List </h2>
+                        <h2> TODO APP</h2>
                         <div className='search_div'>
                             <input
                                 type="text"
@@ -25,23 +23,28 @@ const Serach = (props) => {
                                 value={search}
                                 className="ser_text"
                                 onChange={(e) => setSearch(e.target.value)} />
+
                             <Link to="/">
                                 <button className='sear_button'>Logout</button>
-                            </Link>
+                            </Link> {
+                                props.todos
+                                    .filter(item => item.message.toLowerCase().includes(search.toLowerCase()))
+                                    .map(item => search.length === 0 ? kp : <li className='s_text' key={item.id}>{item.message}</li>)
+                            }
                         </div>
+
                     </form>
                 </div>
             </nav>
-            <div className="serch dropdown-content">
+            {/* <div className="serch dropdown-content">
                 {
                     props.todos
                         .filter(item => item.message.toLowerCase().includes(search.toLowerCase()))
                         .map(item => search.length === 0 ? kp : <li className='s_text' key={item.id}>{item.message}</li>)
                 }
 
-            </div>
-
-        </div>
+            </div> */}
+        </>
     )
 }
 

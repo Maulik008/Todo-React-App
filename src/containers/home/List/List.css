@@ -31,4 +31,9 @@
 }
 .l_text {
   font-family: Verdana, Arial, Helvetica, sans-serif;
+  list-style-type: none;
 }
+
+/* .mi {
+  list-style-type: none;
+} */

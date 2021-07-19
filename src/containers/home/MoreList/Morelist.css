@@ -15,11 +15,52 @@
   border: none;
 }
 .mt_text {
+  cursor: pointer;
   font-family: Verdana, Arial, Helvetica, sans-serif;
+  list-style-type: none;
 }
 .mp_text {
+  cursor: pointer;
   font-family: Verdana, Arial, Helvetica, sans-serif;
+  list-style-type: none;
 }
 .md_text {
+  cursor: pointer;
   font-family: Verdana, Arial, Helvetica, sans-serif;
+  list-style-type: none;
+}
+
+.smlist {
+  margin-top: 1%;
+  width: 50%;
+  margin-bottom: 2%;
+  color: rgb(76, 173, 76);
+  margin-left: 22%;
+}
+
+.smtlist {
+  margin-top: 1%;
+  width: 50%;
+  margin-bottom: 2%;
+  color: rgb(19, 138, 138);
+  margin-left: 22%;
+}
+
+.smplist {
+  margin-top: 1%;
+  width: 80%;
+  margin-bottom: 2%;
+  color: violet;
+  margin-left: 11%;
+}
+
+.d_task {
+  text-align: center;
+}
+.cardss:hover {
+  transform: scale(1.05);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.12), 0 4px 8px rgba(0, 0, 0, 0.06);
+}
+.tt {
+  text-decoration: underline;
 }

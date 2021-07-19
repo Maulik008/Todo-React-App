@@ -1,5 +1,5 @@
 .serch {
-  margin-left: 10%;
+  margin-left: 15%;
 }
 .ser_text {
   /* float: right; */
@@ -17,5 +17,6 @@
   color: rgb(243, 241, 237);
 }
 .s_text {
-  margin-left: 580px;
+  margin-left: 350px;
+  list-style-type: none;
 }

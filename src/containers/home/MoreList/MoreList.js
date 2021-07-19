@@ -9,42 +9,70 @@ import '../MoreList/Morelist.css'
 const MoreList = (props) => {
 
     return (<>
-
         <div className="container">
             <div className="row">
                 <div className="col">
-                    <div className="card" >
-                        <div className="card-body">
-                            <h5 className="card-title">Done Task</h5>
+                    <div className="card cardss" >
+                        <div className="card-body d_task">
+                            <h3 className="card-title tt ">Done Task</h3>
                             <p className="card-text">{props.todos
                                 .filter(item => item.done === true)
-                                .map(item => <li className='md_text' key={item.id}>{item.message}</li>
+                                .map(item => (<>
+                                    <div className="col cardss smlist ">
+                                        <div className="card cardx  " >
+                                            <li className="md_text shadow p-2 bg-white rounded " key={item.id}>{item.message}</li>
+
+                                            {/* <li className='md_text' key={item.id}>{item.message}</li>*/}
+                                        </div></div>
+                                </>
+                                )
 
                                 )}</p>
                         </div>
                     </div>
                 </div>
                 <div className="col">
-                    <div className="card" >
-                        <div className="card-body">
-                            <h5 className="card-title">Tested Tasks</h5>
+                    <div className="card cardss" >
+                        <div className="card-body d_task">
+                            <h3 className="card-title tt ">Tested Tasks</h3>
                             <p className="card-text"> {props.todos
                                 .filter(item => item.tested === true)
-                                .map(item => <li className='mt_text' key={item.id}>{item.message}</li>)} </p>
+                                .map(item => (<>
+                                    <div className="col cardss smtlist ">
+                                        <div className="card cardx  " >
+
+
+                                            <li className="mt_text shadow p-2 bg-white rounded" key={item.id}>{item.message}</li>
+
+                                            {/* <li className='mt_text' key={item.id}>{item.message}</li>*/}
+                                        </div></div>
+                                </>
+                                )
+
+                                )} </p>
                         </div>
                     </div>
                 </div>
                 <div className="col">
-                    <div className="card" >
-                        <div className="card-body">
-                            <h5 className="card-title">Progress Tasks</h5>
+                    <div className="card cardss" >
+                        <div className="card-body d_task">
+                            <h3 className="card-title tt">Progress Tasks</h3>
                             <p className="card-text"> {props.todos
                                 .filter(item => item.progress === true)
-                                .map(item => <li className='mp_text' key={item.id}>{item.message}
-                                    <button className="pro_button" onClick={() => { props.dispatch(deleteTodo(item.id)) }}>Delete</button>
-                                    <button className="pro_button1" onClick={() => {
-                                        props.dispatch(doneTodo(item.id))
-                                    }}>Done</button></li>)}
+                                .map(item =>
+                                (<>
+                                    <div className="col smplist ">
+                                        <div className="card cardss cardx  " >
+
+                                            <li className='mp_text shadow p-2 bg-white rounded' key={item.id}>{item.message}
+                                                <button className="pro_button cardss" onClick={() => { props.dispatch(deleteTodo(item.id)) }}>Delete</button>
+                                                <button className="pro_button1 cardss" onClick={() => {
+                                                    props.dispatch(doneTodo(item.id))
+                                                }}>Done</button></li>
+
+                                        </div>
+                                    </div></>)
+                                )}
                             </p>
                         </div>
                     </div>
@@ -58,8 +86,6 @@ const MoreList = (props) => {
         {/* <Link to="/">
             <Button className='loginb'>Logout</Button>
         </Link> */}
-
-
     </>
     )
 }
