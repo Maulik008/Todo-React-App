@@ -9,7 +9,9 @@ import '../MoreList/Morelist.css'
 const MoreList = (props) => {
 
     return (<>
-        <div className="container">
+        <div className="container"><br /><br />
+            <h2 className="text-dark fontlist2">  My TODO List</h2>
+            <br />
             <div className="row">
                 <div className="col">
                     <div className="card cardss" >
@@ -79,12 +81,12 @@ const MoreList = (props) => {
                 </div>
             </div>
         </div>
-        <button className="  loginb" onClick={() => {
+        <button className=" btn btn-outline-primary loginb" onClick={() => {
             props.todos.map(e => { props.dispatch(deleteTodo(e.id)) })
         }} >All Reset</button>
 
         {/* <Link to="/">
-            <Button className='loginb'>Logout</Button>
+            <Button className='loginb '>Logout</Button>
         </Link> */}
     </>
     )
